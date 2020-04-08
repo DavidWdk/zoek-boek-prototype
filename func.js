@@ -60,7 +60,7 @@ function filter() {
     tariff = tariff.value.trim();
     score = score.value.trim();
 
-    //collect user input for the filter
+    //
 
 }
 
