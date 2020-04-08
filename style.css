@@ -96,6 +96,12 @@ h6 {
 }
 
 /* Modal styling */
+.modalRef {
+    border: none;
+    padding: 0;
+    background: none;
+}
+
 .modalLink {
     color: inherit;
     text-decoration: inherit;

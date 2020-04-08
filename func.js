@@ -52,8 +52,6 @@ function filter() {
     tariffInput = $("#tariff").val();
     scoreInput = $("#score").val();
 
-
-
     //Collects all user data and makes it compatible
     // //Vera
     var veraUserTags = getVeraUserInfo();
@@ -76,13 +74,13 @@ function filter() {
 
     console.log(veraScore);
 
-    //filtering
-    // if (prevShiftsInput > veraPrevShifts && distanceInput < veraDistance && tariffInput < veraTariff && scoreInput > veraScore)    
-    // {
-    //     $('#veraRow').remove();
-    // } else {
+    filtering
+    if (prevShiftsInput > veraPrevShifts && distanceInput < veraDistance && tariffInput < veraTariff && scoreInput > veraScore)    
+    {
+        $('#veraRow').remove();
+    } else {
         
-    // }
+    }
 }
 
 function getVeraUserInfo() {

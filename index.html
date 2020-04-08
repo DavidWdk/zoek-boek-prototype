@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="func.js"></script>
+    <!-- <script src="func.js"></script> -->
+    <script src="finalFunc.js"></script>
     <link rel="stylesheet" href="https://use.typekit.net/xrs8kjn.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2e10d94825.js" crossorigin="anonymous"></script>    
@@ -121,24 +122,8 @@
                         <th scope="col">REVIEWSCORE</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr id="veraRow">
-                        <form>
-                        <th scope="row"><input type="checkbox" class="checkbox-round" id="checkbox"/></th>
-                        <td><a href="#veraModal" class="modalLink" data-toggle="modal" data-target="#veraModal"><b>Vera de Gaal<span id="veraDistance" style="color:#808080;"> 8km</span></a></b><br>
-                        <span id="veraPrevShifts" style="color:#808080;">8 voorgaande diensten</span></td>
-                        <td class="skillsPadding">
-                            <div class="skillContainer">
-                                <div class="skill" style="background-color:#FF453A; color:#5C0601;">Jeugdzorg</div>
-                                <div class="skill" style="background-color:#5AC8FA; color:#03415E;">PGB-zorg</div>
-                                <div class="skill" style="background-color:#FFCC00; color:#564500;">Eerstelijnszorg</div>
-                                <div class="skill" style="background-color:#34C759; color:#00350D;">GGZ</div></td>
-                            </div>
-                        <td><span style="font-size: 30px; font-weight:800;">€40</span> BTW vrij</td>
-                        <td><span style="font-size: 30px; font-weight:800;">48</span> uur</td>
-                        <td><span style="font-size: 30px; font-weight:800; color:#34C759">8,3</span></td></td>
-                    </tr>
-                    <tr id="janRow">
+                    <tbody id="freelancerResults">                 
+                    <!-- <tr id="janRow">
                         <th scope="row"><input type="checkbox" class="checkbox-round" id="checkbox"/></th>
                         <td><a href="#janModal" class="modalLink" data-toggle="modal" data-target="#janModal"><b>Jan Bierman<span id="janDistance" style="color:#808080;"> 41km</span></a></b><br>
                         <span id="janPrevShifts" style="color:#808080;">4 voorgaande diensten</span></td>
@@ -168,201 +153,17 @@
                         <td><span style="font-size: 30px; font-weight:800;">14</span> uur</td>
                         <td><span style="font-size: 30px; font-weight:800; color:#34C759">6,3</span></td></td>
                         </form>
-                    </tr>
+                    </tr> -->
                     </tbody>
                 </table>
                 <button type="submit" onClick="filter()" class="btn btn-primary mb-2 float-right" style="margin-top:15px;">Uitnodigen</button>
             </div> <!-- Container Closer -->
     
             
-            <!-- MODALS -->
-            <!-- Vera de Gaal Modal -->
-            <div class="modal" tabindex="-1" role="dialog" id="veraModal">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modalContent">
-                        <div class="modalHead">
-                            <h3>Vera de Gaal</h3> <h4 style="margin-left:10px;">8 voorafgaande diensten</h4>
-                            <img src="img/favorite.png" class="ml-auto close" style="width:30px;"/>
-                        </div>   
-
-                        <div class="modalBody">
-                            <div class="row">
-                                <img src="img/user.png" class="col-2" style="height:105px; align-self:center;">
-                            
-                                <div class="col-10">
-                                    <h5>BIO</h5>
-                                    ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis orci quis scelerisque fermentum. Integer gravida ex dui, in vulputate purus posuere ut. Nunc mollis orci quis scelerisque fermentum. 
-                                </div>
-                            </div>
-
-                            <h5 style="margin-top:30px;">ALLE KWALIFACTIES & FUNCTIES</h5>
-                            <div class="row" style="margin-left:-2px; margin-right:-2px;">
-                                <div class="skill" style="background-color:#FF453A; color:#5C0601;">Jeugdzorg</div>
-                                <div class="skill" style="background-color:#5AC8FA; color:#03415E;">PGB-zorg</div>
-                                <div class="skill" style="background-color:#FFCC00; color:#564500;">Eerstelijnszorg</div>
-                                <div class="skill" style="background-color:#BF5AF2; color:#12021A;">Tweedelijnszorg</div>
-                                <div class="skill" style="background-color:#FF7751; color:#471b0e;">Autismezorg</div>
-                                <div class="skill" style="background-color:#34C759; color:#00350D;">GGZ</div>
-                                <div class="skill" style="background-color:#007AFF; color:#202020;">Bloedprikken</div>
-                            </div>
-
-                            <div class="row" style="margin-top:30px;">
-                                <h5 class="col">REVIEWSCORE</h5> <h5 class="col">REACTIEDUUR</h5> <h5 class="col">UURTARIEF</h5>
-                            </div>
-
-                            <div class="row" style="margin-top:-10px;">
-                                <span id="veraScore" class="col-4" style="font-size: 30px; font-weight:800; color:#34C759">8,3</span> 
-                                <span class="col-4"style="font-size: 30px; font-weight:800;">48</span>
-                                <span id="veraTariff" class="col-4" style="font-size: 30px; font-weight:800;">€40,00</span> 
-                            </div>
-                            
-                            <div class="row" style="margin-top:30px; margin-left: 0px;">
-                                <h5>LOCATIE</h5>
-                            </div>
-
-                            <div class="row" style="margin-top:-10px; margin-left: 0px;">
-                                Zandpol <span style="color:#858585; margin-left: 10px;">8km</span>
-                            </div>
-                            
-                            <div class="row" style="margin-top:30px; margin-left: 0px;">
-                                <h5>NEEM CONTACT OP</h5> <h5 class="ml-auto" style="margin-right:15px;">DOWNLOAD CV</h5> 
-                            </div>
-
-                            <div class="row" style="margin-top:-10px; margin-left: 0px;">
-                                <i class="fas fa-envelope" style="margin: 8px 8px 0 0;"></i> VeraGaal@gmail.com <i class="fas fa-download ml-auto" style="margin-right:15px; margin-top: 15px;"></i>
-                            </div>
-                            <div class="row" style="margin-top:-5px; margin-left: 0px;">
-                                <i class="fas fa-phone" style="margin: 8px 8px 0 0;"></i> 06 512 32 089
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Jan Bierman Modal -->
-            <div class="modal" tabindex="-1" role="dialog" id="janModal">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modalContent">
-                        <div class="modalHead">
-                            <h3>Jan Bierman</h3> <h4 style="margin-left:10px;">4 voorafgaande diensten</h4>
-                            <img src="img/favorite.png" class="ml-auto close" style="width:30px;"/>
-                        </div>   
-
-                        <div class="modalBody">
-                            <div class="row">
-                                <img src="img/user.png" class="col-2" style="height:105px; align-self:center;">
-                            
-                                <div class="col-10">
-                                    <h5>BIO</h5>
-                                    ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis orci quis scelerisque fermentum. Integer gravida ex dui, in vulputate purus posuere ut. Nunc mollis orci quis scelerisque fermentum. 
-                                </div>
-                            </div>
-
-                            <h5 style="margin-top:30px;">ALLE KWALIFACTIES & FUNCTIES</h5>
-                            <div class="row" style="margin-left:-2px; margin-right:-2px;">
-                                <div class="skill" style="background-color:#FF453A; color:#5C0601;">Jeugdzorg</div>
-                                <div class="skill" style="background-color:#5AC8FA; color:#03415E;">PGB-zorg</div>
-                                <div class="skill" style="background-color:#FFCC00; color:#564500;">Eerstelijnszorg</div>
-                                <div class="skill" style="background-color:#BF5AF2; color:#12021A;">Tweedelijnszorg</div>
-                                <div class="skill" style="background-color:#FF7751; color:#471b0e;">Autismezorg</div>
-                                <div class="skill" style="background-color:#34C759; color:#00350D;">GGZ</div>
-                                <div class="skill" style="background-color:#007AFF; color:#202020;">Bloedprikken</div>
-                            </div>
-
-                            <div class="row" style="margin-top:30px;">
-                                <h5 class="col">REVIEWSCORE</h5> <h5 class="col">REACTIEDUUR</h5> <h5 class="col">UURTARIEF</h5>
-                            </div>
-
-                            <div class="row" style="margin-top:-10px;">
-                                <span id="janScore" class="col-4" style="font-size: 30px; font-weight:800; color:#34C759">7,1</span> 
-                                <span class="col-4"style="font-size: 30px; font-weight:800;">23</span>
-                                <span id="janTariff" class="col-4" style="font-size: 30px; font-weight:800;">€35,00</span> 
-                            </div>
-                            
-                            <div class="row" style="margin-top:30px; margin-left: 0px;">
-                                <h5>LOCATIE</h5>
-                            </div>
-
-                            <div class="row" style="margin-top:-10px; margin-left: 0px;">
-                                Den Haag <span style="color:#858585; margin-left: 10px;">41km</span>
-                            </div>
-                            
-                            <div class="row" style="margin-top:30px; margin-left: 0px;">
-                                <h5>NEEM CONTACT OP</h5> <h5 class="ml-auto" style="margin-right:15px;">DOWNLOAD CV</h5> 
-                            </div>
-
-                            <div class="row" style="margin-top:-10px; margin-left: 0px;">
-                                <i class="fas fa-envelope" style="margin: 8px 8px 0 0;"></i> Janbierman@gmail.com <i class="fas fa-download ml-auto" style="margin-right:15px; margin-top: 15px;"></i>
-                            </div>
-                            <div class="row" style="margin-top:-5px; margin-left: 0px;">
-                                <i class="fas fa-phone" style="margin: 8px 8px 0 0;"></i> 06 338 12 849
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <!-- MODAL -->
             <!-- Anne Spaak Modal -->
-            <div class="modal" tabindex="-1" role="dialog" id="anneModal">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modalContent">
-                        <div class="modalHead">
-                            <h3>Anne Spaak</h3> <h4 style="margin-left:10px;">0 voorafgaande diensten</h4>
-                            <img src="img/favorite.png" class="ml-auto close" style="width:30px;"/>
-                        </div>   
-
-                        <div class="modalBody">
-                            <div class="row">
-                                <img src="img/user.png" class="col-2" style="height:105px; align-self:center;">
-                            
-                                <div class="col-10">
-                                    <h5>BIO</h5>
-                                    ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis orci quis scelerisque fermentum. Integer gravida ex dui, in vulputate purus posuere ut. Nunc mollis orci quis scelerisque fermentum. 
-                                </div>
-                            </div>
-
-                            <h5 style="margin-top:30px;">ALLE KWALIFACTIES & FUNCTIES</h5>
-                            <div class="row" style="margin-left:-2px; margin-right:-2px;">
-                                <div class="skill" style="background-color:#FF453A; color:#5C0601;">Jeugdzorg</div>
-                                <div class="skill" style="background-color:#5AC8FA; color:#03415E;">PGB-zorg</div>
-                                <div class="skill" style="background-color:#FFCC00; color:#564500;">Eerstelijnszorg</div>
-                                <div class="skill" style="background-color:#BF5AF2; color:#12021A;">Tweedelijnszorg</div>
-                                <div class="skill" style="background-color:#FF7751; color:#471b0e;">Autismezorg</div>
-                                <div class="skill" style="background-color:#34C759; color:#00350D;">GGZ</div>
-                                <div class="skill" style="background-color:#007AFF; color:#202020;">Bloedprikken</div>
-                            </div>
-
-                            <div class="row" style="margin-top:30px;">
-                                <h5 class="col">REVIEWSCORE</h5> <h5 class="col">REACTIEDUUR</h5> <h5 class="col">UURTARIEF</h5>
-                            </div>
-
-                            <div class="row" style="margin-top:-10px;">
-                                <span id="anneScore" class="col-4" style="font-size: 30px; font-weight:800; color:#34C759">6,3</span> 
-                                <span class="col-4"style="font-size: 30px; font-weight:800;">14</span>
-                                <span id="anneTariff" class="col-4" style="font-size: 30px; font-weight:800;">€22,50</span> 
-                            </div>
-                            
-                            <div class="row" style="margin-top:30px; margin-left: 0px;">
-                                <h5>LOCATIE</h5>
-                            </div>
-
-                            <div class="row" style="margin-top:-10px; margin-left: 0px;">
-                                Utrecht <span style="color:#858585; margin-left: 10px;">33km</span>
-                            </div>
-                            
-                            <div class="row" style="margin-top:30px; margin-left: 0px;">
-                                <h5>NEEM CONTACT OP</h5> <h5 class="ml-auto" style="margin-right:15px;">DOWNLOAD CV</h5> 
-                            </div>
-
-                            <div class="row" style="margin-top:-10px; margin-left: 0px;">
-                                <i class="fas fa-envelope" style="margin: 8px 8px 0 0;"></i> VeraGaal@gmail.com <i class="fas fa-download ml-auto" style="margin-right:15px; margin-top: 15px;"></i>
-                            </div>
-                            <div class="row" style="margin-top:-5px; margin-left: 0px;">
-                                <i class="fas fa-phone" style="margin: 8px 8px 0 0;"></i> 06 377 12 959
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="modal" tabindex="-1" role="dialog" id="modal">
+               
             </div>
         </div>
     </body>
