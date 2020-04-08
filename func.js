@@ -45,23 +45,44 @@ $(document).ready(function(){
 //Filter based on form input
 function filter() {
     
+    //Collects user input
+    var prevShiftsInput, distanceInput, tariffInput, scoreInput;
+    prevShiftsInput = $("#prevShifts").val();
+    distanceInput = $("#distance").val();
+    tariffInput = $("#tariff").val();
+    scoreInput = $("#score").val();
 
-    var prevShifts, distance, tarif, score;
-    //collect input and checks empty values
-    //previous shifts
-    prevShifts = $("#prevShifts").val();
-    distance = $("#distance").val();
-    tariff = $("#tariff").val();
-    score = $("#score").val();
 
-    //deletes whitespace
-    prevShifts = prevShifts.value.trim();
-    distance = distance.value.trim();
-    tariff = tariff.value.trim();
-    score = score.value.trim();
 
-    //collect user input for the filter
+    //Collects all user data and makes it compatible
+    // //Vera
+    var veraUserTags = getVeraUserInfo();
+    var veraScore = veraUserTags[0];
+    var veraTariff = veraUserTags[1];
+    var veraDistance = veraUserTags[2];
+    var veraPrevShifts = veraUserTags[3];
+    // //Jan
+    var janUserTags = getJanUserInfo();
+    var janScore = janUserTags[0];
+    var janTariff = janUserTags[1];
+    var janDistance = janUserTags[2];
+    var janPrevShifts = janUserTags[3];
+    // //Anne
+    var anneUserTags = getAnneUserInfo();
+    var anneScore = anneUserTags[0];
+    var anneTariff = anneUserTags[1];
+    var anneDistance = anneUserTags[2];
+    var annePrevShifts = anneUserTags[3];
 
+    console.log(veraScore);
+
+    //filtering
+    // if (prevShiftsInput > veraPrevShifts && distanceInput < veraDistance && tariffInput < veraTariff && scoreInput > veraScore)    
+    // {
+    //     $('#veraRow').remove();
+    // } else {
+        
+    // }
 }
 
 function getVeraUserInfo() {
@@ -83,7 +104,9 @@ function getVeraUserInfo() {
     //previous shifts
     var veraPrevShifts = document.getElementById("veraPrevShifts").innerHTML;
     veraPrevShifts = veraPrevShifts.replace(' voorafgaande diensten', '');
-    veraPrevShifts = parseInt(janPrevShifts);
+    veraPrevShifts = parseInt(veraPrevShifts);
+
+    return [veraScore, veraTariff, veraDistance, veraPrevShifts];
 }
 
 function getJanUserInfo() {
@@ -106,6 +129,8 @@ function getJanUserInfo() {
     var janPrevShifts = document.getElementById("janPrevShifts").innerHTML;
     janPrevShifts = janPrevShifts.replace(' voorafgaande diensten', '');
     janPrevShifts = parseInt(janPrevShifts);
+
+    return [janScore, janTariff, janDistance, janPrevShifts];
 }
 
 function getAnneUserInfo() {
@@ -128,6 +153,8 @@ function getAnneUserInfo() {
     var annePrevShifts = document.getElementById("annePrevShifts").innerHTML;
     annePrevShifts = annePrevShifts.replace(' voorafgaande diensten', '');
     annePrevShifts = parseInt(annePrevShifts)
+
+    return [anneScore, anneTariff, anneDistance, annePrevShifts];
 }
 
 //Invisable table when page is loaded
