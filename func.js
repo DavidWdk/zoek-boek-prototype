@@ -74,7 +74,7 @@ function filter() {
 
     console.log(veraScore);
 
-    filtering
+    //filtering
     if (prevShiftsInput > veraPrevShifts && distanceInput < veraDistance && tariffInput < veraTariff && scoreInput > veraScore)    
     {
         $('#veraRow').remove();
