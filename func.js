@@ -44,7 +44,7 @@ $(document).ready(function(){
 
 //Filter based on form input
 function filter() {
-    
+
     //Collects user input
     var prevShiftsInput, distanceInput, tariffInput, scoreInput;
     prevShiftsInput = $("#prevShifts").val();
@@ -75,11 +75,11 @@ function filter() {
     console.log(veraScore);
 
     //filtering
-    if (prevShiftsInput > veraPrevShifts && distanceInput < veraDistance && tariffInput < veraTariff && scoreInput > veraScore)    
+    if (prevShiftsInput > veraPrevShifts && distanceInput < veraDistance && tariffInput < veraTariff && scoreInput > veraScore)
     {
         $('#veraRow').remove();
     } else {
-        
+
     }
 }
 
@@ -156,7 +156,7 @@ function getAnneUserInfo() {
 }
 
 //Invisable table when page is loaded
-//When searching with filter, delete required rows 
+//When searching with filter, delete required rows
 //When not using filter or certain inputs, ignore them
 //Make the table visable
 
