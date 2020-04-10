@@ -114,6 +114,9 @@ function renderFreelancer() {
     //check if necessary fields are valid
     dateInput = $("#date").val();
 
+    //prevent duplicate results
+    $(".resultRow").remove();
+
     if(dateInput !== "") {
             $.each(freelancers, function(i, v){
             var output = '<tr class="resultRow" id="freelancer_'+v.id+'">';
