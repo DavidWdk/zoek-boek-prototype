@@ -5,7 +5,6 @@ $(document).ready(function(){
     renderFreelancer();
     datepicker();
     pushFreelancers();
-    $("#searchResultSection").hide();
 });
 
 //bootstrap date picker
@@ -295,8 +294,6 @@ function inviteFreelancers() {
 function filter() {
     renderFreelancer();
 
-    $("#searchResultSection").show();
-
     var prevShiftsInput, distanceInput, tariffInput, scoreInput;
     prevShiftsInput = $("#prevShifts").val();
     distanceInput = $("#distance").val();
@@ -336,7 +333,6 @@ function showModal(id) {
     $.each(freelancers, function(i, v){
         if(v.id == id) {
             var output = '<div class="modal-dialog modal-lg" role="document">'
-            output += '<div id="page-mask"></div>'
             output += '<div class="modalContent"><div class="modalHead">';
             output += '<h3>'+v.name+'</h3> <h4 style="margin-left:10px;">'+v.prevShifts+' voorafgaande diensten</h4>'
             output += '<button onclick="closeModal()" class="close ml-auto" data-dismiss="modal" aria-label="Close"><img src="img/close.png" class="close" style="width:30px;"/></button></div>'
