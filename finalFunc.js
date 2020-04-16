@@ -4,7 +4,6 @@
 $(document).ready(function(){
     renderFreelancer();
     datepicker();
-    pushFreelancers();
     $("#searchResultSection").hide();
 });
 
