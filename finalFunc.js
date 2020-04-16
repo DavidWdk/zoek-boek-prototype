@@ -5,6 +5,7 @@ $(document).ready(function(){
     renderFreelancer();
     datepicker();
     $("#searchResultSection").hide();
+    arrowSwitch();
 });
 
 //bootstrap date picker
@@ -383,6 +384,12 @@ function showModal(id) {
         }
     })
 }
+
+
+function arrowSwitch() {
+    $('#filterHead').click(function() {
+        $(this).find('i').toggleClass('fas fa-caret-up fas fa-caret-down')
+    })}
 
 //function to hide the modal, activates when pressing the close button
 function closeModal() {
